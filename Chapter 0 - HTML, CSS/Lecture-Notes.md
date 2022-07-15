@@ -40,6 +40,7 @@ how all the HTML elements are related to each other.
 | a::b  | Pseudoelement Selector    |
 
 **Descendant Selector & Child Selector**: Selects the child of the element firstly referenced.
+
     <ol>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -97,7 +98,7 @@ In addition to tihs, there exist the media queries
 
 **Flexbox**: If we have multiple elements that might overflow if we're not careful about how we do responsive design, is where flexbox comes in really handy.
 
-You need to tell the container element (or one which contains / wraps the elements you want to apply flexbox to), to be flexbox by: 
+You need to tell the container element (or one which contains / wraps the elements you want to apply flexbox to), to be flexbox by:
 
     #container{
         display: flex
@@ -107,7 +108,7 @@ This way, everything inside the container will have flexbox applied.
 
 Flexbox is a modern paradigm layout, but there are others (we can say Media Queries is another layout paradigm).
 
-**Grid**: Grid is another layout paradigm that as Flexbox does, styles and adapts a design, depending on the device vieport's width: 
+**Grid**: Grid is another layout paradigm that as Flexbox does, styles and adapts a design, depending on the device vieport's width:
 
     #container{
         display: grid
@@ -118,30 +119,31 @@ Flexbox is a modern paradigm layout, but there are others (we can say Media Quer
 
 ## Bootstrap
 
-Bootstrap's column model divides its page into 12 distinct columns. It divides every row into 12 column units, so with a class like 
+Bootstrap's column model divides its page into 12 distinct columns. It divides every row into 12 column units, so with a class like
 
     "<div class="col-3"> This is a 3 column width section </div>
 
 I am giving this div component a 3 column width, and I would still have another 9 column units to insert more elements in that specific row. This layout paradigm will be fully responsive and will shrink as the viewport does. Of course, the columns in a row will not need to be the same size.
 
-Bootstrap also allows to specify the amount of columns taken by an element depending on the size of the screen. 
+Bootstrap also allows to specify the amount of columns taken by an element depending on the size of the screen.
 
     <div class="row">
         <div class="col-lg-3 col-sm-6">This is a section </div>
     </div>
 
-This row will display an element that will take 3 column units space in a large screen, and 6 column units space in a small screen. 
+This row will display an element that will take 3 column units space in a large screen, and 6 column units space in a small screen.
 
 ## Sass
+
 Extesnion to CSS, it allows to use and manipulate CSS in a way that is going to be faster and remove some of the repetition that we might have in plain CSS.
 
 One of the key features of Sass is the ability to have variables. As Sass is a different language, it requires a different extension for its files, which is .scss.
 
-All variables start with the $ character: 
+All variables start with the $ character:
 
     $color: red; //Creates a variable called color, which value is red. 
 
-Then, we apply it to the element as: 
+Then, we apply it to the element as:
 
     element{
         color: $color; 
@@ -176,7 +178,7 @@ Apart from these, Sass gives the ability to nest CSS selectors inside of other C
 
 Sass also offers inheritance. If we have certain CSS selectors that are related to other CSS selectors, but they're may be adding some additional information.
 
-So, the generic element properties will be defined by using a *%name*, and child elements will extend that: 
+So, the generic element properties will be defined by using a *%name*, and child elements will extend that:
 
     %parent{
         attribute: value;
