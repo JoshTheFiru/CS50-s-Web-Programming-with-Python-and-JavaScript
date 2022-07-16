@@ -4,9 +4,15 @@
 /*----------- VARIABLES ------------*/
 $font: 'Roboto', sans-serif;
 $main-input-shadow: 0px 2px 4px 1px rgba(194, 194, 194, 0.575);
+$advanced-input-shadow: 0px 2px 4px 1px rgba(57, 173, 250, 0.575);
+
 
 
 /*------------ RULES ---------------*/
+*{
+    font-family: $font;
+}
+
 #upper-links{
     display: flex;
     justify-content:end;
@@ -73,7 +79,6 @@ $main-input-shadow: 0px 2px 4px 1px rgba(194, 194, 194, 0.575);
 
     [type=text]:focus{
         box-shadow: $main-input-shadow;
-
     }
 
 
@@ -98,3 +103,64 @@ $main-input-shadow: 0px 2px 4px 1px rgba(194, 194, 194, 0.575);
     }
     
 }
+
+#adv-srch-hdg{
+    color: red; 
+    font-family: $font;
+    font-weight: 300;
+    font-size: 25px;
+    margin: 30px auto 30px 30px;
+}
+
+hr{
+    border: 0.15px solid rgba(194, 194, 194, 0.575);
+}
+
+
+.container{
+    margin: 5% 10%;
+
+    h2{
+        font-weight: 200;
+        font-size: 20px;
+        color: black;
+    }
+
+    .adv-row{
+        display: grid;
+        grid-template-columns: 200px auto;
+        vertical-align: middle;
+
+        .adv-srch-input{
+            margin: auto;
+            padding: 10px;
+            width: 100%;
+            border: 0.5px solid rgba(179, 179, 179, 0.664);
+            font-family: $font;
+            font-size: medium;
+            outline: 0px;
+        }
+    
+        .adv-srch-input:hover{
+            box-shadow: $advanced-input-shadow;
+        }
+    
+        .adv-srch-input:focus{
+            box-shadow: $advanced-input-shadow;
+        }
+        
+    }
+
+    [type=submit]{
+        display: block;
+        margin: 20px 0px 20px auto;
+        padding: 10px;
+        font-weight: 600;
+        color: white;
+        background-color: #357ae8;
+        border: none;
+    }
+}
+
+
+

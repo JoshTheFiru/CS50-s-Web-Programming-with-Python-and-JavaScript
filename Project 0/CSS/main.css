@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 /*----------- VARIABLES ------------*/
 /*------------ RULES ---------------*/
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 #upper-links {
   display: flex;
   justify-content: end;
@@ -75,6 +79,56 @@
 #main-form .buttons input:hover {
   cursor: pointer;
   box-shadow: 0px 0px 2px 2px rgba(194, 194, 194, 0.575);
+}
+
+#adv-srch-hdg {
+  color: red;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  margin: 30px auto 30px 30px;
+}
+
+hr {
+  border: 0.15px solid rgba(194, 194, 194, 0.575);
+}
+
+.container {
+  margin: 5% 10%;
+}
+.container h2 {
+  font-weight: 200;
+  font-size: 20px;
+  color: black;
+}
+.container .adv-row {
+  display: grid;
+  grid-template-columns: 200px auto;
+  vertical-align: middle;
+}
+.container .adv-row .adv-srch-input {
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  border: 0.5px solid rgba(179, 179, 179, 0.664);
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  outline: 0px;
+}
+.container .adv-row .adv-srch-input:hover {
+  box-shadow: 0px 2px 4px 1px rgba(57, 173, 250, 0.575);
+}
+.container .adv-row .adv-srch-input:focus {
+  box-shadow: 0px 2px 4px 1px rgba(57, 173, 250, 0.575);
+}
+.container [type=submit] {
+  display: block;
+  margin: 20px 0px 20px auto;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+  background-color: #357ae8;
+  border: none;
 }
 
 /*# sourceMappingURL=main.css.map */
