@@ -80,3 +80,60 @@ Loops enable us to loop through any type of sequence. Its syntax is slightly dif
         print(i)
 
 As happened with the conditionals and with almost every structure in Python, we don't have curly brackets {} to delimite the code blocks, and this goes through the identation, and the semicolon :, which marks the start.
+
+## [Functions](functions.py)
+
+To create an own function in Python, the syntax goes as follows:
+
+    def functionName(arguments):
+        code of the function
+
+Functions can be also imported from other Python modules or files. To import functions into your Python file:
+
+    from nameOfFile import functionName
+
+You also could bring the entire module by doing a simpler line:
+
+    import nameOfFile
+
+But this way to call a function of this module, you would need to do:
+
+    nameOfFile.functionName()
+
+Python also comes with numerous built-in modules that can be imported in the same way explained.
+
+## [Object-Oriented Programming](classes.py)
+
+In an OOP, we think about the world in terms of objects where these might store information inside of them and also support the ability to perform types of operations (functions).
+
+Same as other languages, we can create classes, that can be thought as templates for a type of object.
+
+In Python, the constructor for a class is the "magic function"
+
+    def __init__(self, arguments):
+        block of code
+
+**self** represents the object we are currently dealing with.
+
+## [Decorators](decorators.py)
+
+Just as we can take a value in Python, like a number, and modify the value, decorators are a way in Python of taking a function, and modifying that function, adding some additional behavior to it.
+
+So the idea is to import a function from a module, and return that modified function with the decorator.
+
+Unlike other languages, in Python functions are considered as values like any other type, and can be passed as inputs to other functions and returned as outputs from other functions. This fact is known as the **Functional Programming Paradigm**.
+
+## [Lambda Expressions](lambda.py)
+
+Python way of representing very short handy expressions.
+
+## [Exceptions](exceptions.py)
+
+If we want our programms to handle these possible exceptional cases, situations where things might go wrong.
+
+To handle exceptions we will use try / except structures just as in any other languages, but on Pythons syntax:
+
+    try: 
+        code you want to try
+    except ExceptionToHandle:
+        what you want to happen if that exception jumps in 
