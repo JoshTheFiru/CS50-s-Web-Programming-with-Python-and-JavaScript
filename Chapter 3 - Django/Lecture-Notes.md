@@ -52,8 +52,22 @@ To be able to run the application created, once in the path of the folder:
 
 What it creates is a Django project. Normally, a Django project consist of one or multiple Django applications. The reason for this is, if you think of big websites, they are a sort of separate service that operate within it. So Django comes with this ability to take a project and divide it into multiple distintc apps.
 
-So to start after creating the project, is to create a Django app, by going to the terminal and stating:
+So the way to start after creating the project, is to create a Django app, by going to the terminal and stating:
 
     python manage.py startapp APP_NAME
 
+This will create the file structure necessary to build and run a Django web app.
 
+Among those files, *views.py* is the file that lets us describe what it is the user sees when they visit a particular route, for example, where we can decide what gets rendered to the user.
+
+## Routes
+
+First of all, we add the hello app to the INSTALLED_APPS variable in [settings.py](lecture3/lecture3/settings.py).
+
+Now, in the hello folder, in the [views.py](lecture3/hello/views.py) file, we create a view for the user to see.
+
+From here is where we now begin to create some URL configuration, some sort of setting that tell Django when a particular URL is visited, this function created in the *views.py* should be run in order to return that particular HTTP response.
+
+In order to do that, we need to create a [urls.py](lecture3/hello/urls.py) file for this particular app. Django has a *urls.py* file for the entire project, but in order to not to mess things up, sometimes we need to create a new *urls.py* file in the separate application.
+
+The last step for this artifact to be able to run is to go into the lecture3 directory and open [urls.py](lecture3/lecture3/urls.py), which is the one for all of the apps that might be contained within this project and add the "global" path for the hello application, saying it something like link all its own app urls into a main global url. Something like "*Inside of the hello module, get all the urls file there.*"
