@@ -71,3 +71,14 @@ From here is where we now begin to create some URL configuration, some sort of s
 In order to do that, we need to create a [urls.py](lecture3/hello/urls.py) file for this particular app. Django has a *urls.py* file for the entire project, but in order to not to mess things up, sometimes we need to create a new *urls.py* file in the separate application.
 
 The last step for this artifact to be able to run is to go into the lecture3 directory and open [urls.py](lecture3/lecture3/urls.py), which is the one for all of the apps that might be contained within this project and add the "global" path for the hello application, saying it something like link all its own app urls into a main global url. Something like "*Inside of the hello module, get all the urls file there.*"
+
+The advantage of these mechanisms is that you can parametrize de URLs by using placeholders, so with one function you can for example, personalize a url depending on the user that gets into your application.
+
+## Templates
+
+Templates are the way to introduce the HTML views that we need for our application. So in the *urls.py* file, instead of returning HttpResponses, on the definition of the function that return the view, you will say:
+
+    def index(request):
+        return render(request, "TEMPLATE_NAME")
+
+And this is what **templates** are usefull for. They let us write HTML and CSS (like the "frontend") for our app, and that be rendered once the user visits certain URL.
