@@ -22,3 +22,13 @@ def entries(request, title):
             "content": parsed_content
         })
 
+def search(request):
+    print("Im in search function")
+    print(util.get_entry(request.GET.get('q')))
+    if util.get_entry(request.GET.get('q')) is None:
+        entries(request, util.get_entry(request.POST.get('q')))
+    else: 
+        return render(request, "encyclopedia/error.html")
+
+
+
