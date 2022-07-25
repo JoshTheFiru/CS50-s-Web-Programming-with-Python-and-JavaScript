@@ -40,3 +40,19 @@ def search(request):
                         })    
     
     return render(request, "encyclopedia/error.html")
+
+def create(request):
+    return render(request, "encyclopedia/create.html")
+
+def process_create(request):
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+
+    if util.get_entry(title) is None:
+        util.save_entry(title, content)
+        return index(request)
+    else:
+        return render(request, "encyclopedia/error_create.html")
+
+
+

@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create new entry</h1>
+
+    <form action="{% url 'process_create'%}">
+        <label>Title <input type="text" name="title"></label>
+        <label>Content <input type="textarea" name="content"></label>
+        <button type="submit">Save Entry</button>
+    </form>
+{% endblock %}
