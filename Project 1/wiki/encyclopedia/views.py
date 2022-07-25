@@ -1,8 +1,13 @@
+from django import forms
+from django.http import HttpResponse, HttpResponseRedirect
 from markdown2 import Markdown
 from django.shortcuts import render
-
+from django.urls import reverse
 from . import util
 
+
+class SearchEntryForm(forms.Form):
+    entry = forms.CharField(label = "Search Entry")
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -10,25 +15,28 @@ def index(request):
     })
 
 def entries(request, title):
-
-    markdowner = Markdown()
-    parsed_content = markdowner.convert(util.get_entry(title))
-
     if util.get_entry(title) is None: 
         return render(request, "encyclopedia/error.html")
     else:
+        markdowner = Markdown()
+        parsed_content = markdowner.convert(util.get_entry(title))
         return render(request, "encyclopedia/entries.html", {
             "entry": title,
             "content": parsed_content
         })
 
 def search(request):
-    print("Im in search function")
-    print(util.get_entry(request.GET.get('q')))
-    if util.get_entry(request.GET.get('q')) is None:
-        entries(request, util.get_entry(request.POST.get('q')))
-    else: 
-        return render(request, "encyclopedia/error.html")
-
-
-
+    suggestions = []
+    for title in util.list_entries():
+        if request.POST.get('q') == title: 
+            return entries(request, title)
+        else:
+            if request.POST.get('q') in title:
+                for item in util.list_entries():
+                    if request.POST.get('q') in item:
+                        suggestions.append(item)
+                return render(request, "encyclopedia/suggestions.html", {
+                            "suggestions": suggestions
+                        })    
+    
+    return render(request, "encyclopedia/error.html")

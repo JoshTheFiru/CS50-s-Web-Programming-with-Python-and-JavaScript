@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    <h3> We did not find your query, but here are some coincidences you might be interested in</h3>
+
+    <ul>
+        {% for suggestion in suggestions %}
+            <li><a href="{% url 'entries' suggestion %}">{{ suggestion }}</a></li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
