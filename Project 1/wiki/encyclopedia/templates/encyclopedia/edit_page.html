@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+   Edit {{ entry }}
+{% endblock %}
+
+{% block body %}
+
+    Edit Entry
+
+    <form action="{% url 'process_edit' %}">
+        <input type="textarea" value="{{ content|safe }}">
+        <input type="submit" value="Save Changes">
+    </form>
+
+{% endblock %}

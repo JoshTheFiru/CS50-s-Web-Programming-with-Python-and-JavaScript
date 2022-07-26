@@ -13,6 +13,7 @@ h1 {
 }
 
 textarea {
+    resize: both;
     height: 90vh;
     width: 80%;
 }
@@ -36,3 +37,4 @@ textarea {
 .sidebar h2 {
     margin-top: 5px;
 }
+

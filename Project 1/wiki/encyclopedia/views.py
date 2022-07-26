@@ -54,5 +54,14 @@ def process_create(request):
     else:
         return render(request, "encyclopedia/error_create.html")
 
+def edit(request, content):
+    return render(request, "encyclopedia/edit_page.html", {
+        'content': util.get_entry(content)
+    })
+
+def process_edit(request):
+    return
+
+##para generar azar ranint(a, b) ==> a <= N <= b
 
 
