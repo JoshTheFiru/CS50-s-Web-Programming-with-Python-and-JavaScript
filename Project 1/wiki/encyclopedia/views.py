@@ -1,3 +1,4 @@
+from random import randint
 from django import forms
 from django.http import HttpResponse, HttpResponseRedirect
 from markdown2 import Markdown
@@ -62,6 +63,9 @@ def edit(request, content):
 def process_edit(request):
     return
 
-##para generar azar ranint(a, b) ==> a <= N <= b
-
+def random(request):
+    randomNum = randint(1, len(util.list_entries()))
+    entriesList = list(util.list_entries())
+    return entries(request, entriesList[randomNum-1])
+            
 
