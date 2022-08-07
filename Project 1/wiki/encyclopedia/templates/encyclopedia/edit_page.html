@@ -8,8 +8,9 @@
 
     Edit Entry
 
-    <form action="{% url 'process_edit' %}">
-        <input type="textarea" value="{{ content|safe }}">
+    <form action="{% url 'process_edit' content%}">
+        <input type="hidden" value="{{ title }}">
+        <input type="textarea" value="{{ content|safe }}"><br>
         <input type="submit" value="Save Changes">
     </form>
 

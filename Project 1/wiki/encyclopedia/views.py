@@ -61,11 +61,18 @@ def edit(request, content):
     })
 
 def process_edit(request):
-    return
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    print(title)
+    print(content)
+    if util.get_entry(title) is not None:
+        util.save_entry(title, content)
+        return index(request)
+    else:
+        return render(request, "encyclopedia/error_create.html")
+    
 
 def random(request):
     randomNum = randint(1, len(util.list_entries()))
     entriesList = list(util.list_entries())
     return entries(request, entriesList[randomNum-1])
-            
-
